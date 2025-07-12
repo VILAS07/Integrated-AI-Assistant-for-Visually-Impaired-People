@@ -37,6 +37,19 @@ EMERGENCY_CONTACT=your_emergency_contact_phone_number_here
 ```
 Get these credentials from: https://console.twilio.com/
 
+#### 2. Download Model Files
+Download the required YOLO model files and place them in the root directory:
+- `yolo11n.pt` (5.4MB) - Lightweight object detection
+- `yolo11l.pt` (49MB) - Large object detection model  
+- `yolov8m.pt` (50MB) - Medium YOLOv8 model
+
+You can download these from the official Ultralytics repository or use:
+```bash
+wget https://github.com/ultralytics/assets/releases/download/v0.0.0/yolo11n.pt
+wget https://github.com/ultralytics/assets/releases/download/v0.0.0/yolo11l.pt
+wget https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8m.pt
+```
+
 ### Usage
 Run the main application:
 ```bash
@@ -56,3 +69,24 @@ python AI.py
 - "activate text" - Start text recognition
 - "help" - Trigger emergency alert
 - "stop" - Stop current operation
+
+## Project Structure
+```
+├── AI.py              # Main application file
+├── face.py            # Face recognition module
+├── object.py          # Object detection module
+├── text.py            # Text recognition module
+├── emergency.py       # Emergency alert system
+├── dataset/           # Face dataset directory
+├── requirements.txt   # Python dependencies
+└── README.md         # This file
+```
+
+## Contributing
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+This project is licensed under the MIT License.
