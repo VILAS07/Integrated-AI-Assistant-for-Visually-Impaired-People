@@ -5,8 +5,14 @@ import sys
 import time
 import cohere
 import json
+import os
+from dotenv import load_dotenv
 
-co = cohere.Client('4XxVcYQVeI8asNthDxgY2WOB2zOSStOGZzq7HNW9')
+load_dotenv()
+
+# Get Cohere API key from environment variable or use placeholder
+cohere_api_key = os.getenv('COHERE_API_KEY', 'your_cohere_api_key_here')
+co = cohere.Client(cohere_api_key)
 
 recognizer = sr.Recognizer()
 tts_engine = pyttsx3.init()
